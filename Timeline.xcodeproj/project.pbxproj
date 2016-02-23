@@ -21,6 +21,7 @@
 		AB8DAC7A1C7D151800CF3992 /* LoginSignupChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC791C7D151800CF3992 /* LoginSignupChoiceViewController.swift */; };
 		AB8DAC7C1C7D157300CF3992 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC7B1C7D157300CF3992 /* LoginSignupViewController.swift */; };
 		AB8DAC7E1C7D15BB00CF3992 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC7D1C7D15BB00CF3992 /* User.swift */; };
+		AB8DAC801C7D17B200CF3992 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC7F1C7D17B200CF3992 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		AB8DAC791C7D151800CF3992 /* LoginSignupChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupChoiceViewController.swift; sourceTree = "<group>"; };
 		AB8DAC7B1C7D157300CF3992 /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
 		AB8DAC7D1C7D15BB00CF3992 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AB8DAC7F1C7D17B200CF3992 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				01E3FC241BE92C7600187536 /* AppDelegate.swift */,
 				01E3FC281BE92C7600187536 /* Main.storyboard */,
 				AB8DAC7D1C7D15BB00CF3992 /* User.swift */,
+				AB8DAC7F1C7D17B200CF3992 /* Comment.swift */,
 				AB8DAC7B1C7D157300CF3992 /* LoginSignupViewController.swift */,
 				AB8DAC791C7D151800CF3992 /* LoginSignupChoiceViewController.swift */,
 				AB8DAC771C7D13B100CF3992 /* AddPhotoTableViewController.swift */,
@@ -282,6 +285,7 @@
 				AB8DAC781C7D13B100CF3992 /* AddPhotoTableViewController.swift in Sources */,
 				AB8DAC701C7D0EF100CF3992 /* TimelineTableViewController.swift in Sources */,
 				01E3FC251BE92C7600187536 /* AppDelegate.swift in Sources */,
+				AB8DAC801C7D17B200CF3992 /* Comment.swift in Sources */,
 				AB8DAC7E1C7D15BB00CF3992 /* User.swift in Sources */,
 				AB8DAC761C7D111800CF3992 /* ProfileViewController.swift in Sources */,
 				AB8DAC741C7D100D00CF3992 /* UserSearchTableViewController.swift in Sources */,
