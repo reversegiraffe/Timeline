@@ -25,6 +25,7 @@
 		AB8DAC821C7D18BE00CF3992 /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC811C7D18BE00CF3992 /* Like.swift */; };
 		AB8DAC841C7D19D000CF3992 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC831C7D19D000CF3992 /* Post.swift */; };
 		AB8DAC861C7D1BA300CF3992 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC851C7D1BA300CF3992 /* UserController.swift */; };
+		AB8DAC891C7D233700CF3992 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC881C7D233700CF3992 /* PostController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		AB8DAC811C7D18BE00CF3992 /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		AB8DAC831C7D19D000CF3992 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		AB8DAC851C7D1BA300CF3992 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		AB8DAC881C7D233700CF3992 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostController.swift; path = ../PostController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		01E3FC231BE92C7600187536 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				AB8DAC881C7D233700CF3992 /* PostController.swift */,
 				AB8DAC871C7D1BB600CF3992 /* Model */,
 				01E3FC241BE92C7600187536 /* AppDelegate.swift */,
 				01E3FC281BE92C7600187536 /* Main.storyboard */,
@@ -308,6 +311,7 @@
 				AB8DAC7E1C7D15BB00CF3992 /* User.swift in Sources */,
 				AB8DAC761C7D111800CF3992 /* ProfileViewController.swift in Sources */,
 				AB8DAC821C7D18BE00CF3992 /* Like.swift in Sources */,
+				AB8DAC891C7D233700CF3992 /* PostController.swift in Sources */,
 				AB8DAC741C7D100D00CF3992 /* UserSearchTableViewController.swift in Sources */,
 				AB8DAC721C7D0F4700CF3992 /* PostDetailTableViewController.swift in Sources */,
 			);
