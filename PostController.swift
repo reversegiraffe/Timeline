@@ -13,18 +13,22 @@ class PostController {
     
     static func fetchTimelineForUser(user: User, completion: (posts: [Post]) -> Void) {
         
+        completion(posts: mockPosts())
     }
     
     static func addPost(image: UIImage, caption: String?, completion: (success: Bool, post: Post?) -> Void) {
         
+        completion(success: true, post: mockPosts()[0])
     }
     
     static func postFromIdentifier(identifier: String, completion: (post: Post?) -> Void) {
         
+        completion(post: mockPosts()[1])
     }
     
     static func postsForUser(user: User, completion: (posts: [Post]) -> Void) {
         
+        completion(posts: mockPosts())
     }
     
     static func deletePost(post: Post) {
@@ -33,18 +37,21 @@ class PostController {
     
     static func addCommentWithTextToPost(text: String, post: Post, completion: (success: Bool, post: Post?) -> Void) {
         
+        completion(success: true, post: mockPosts()[1])
     }
     
     static func deleteComment(comment: Comment, completion: (success: Bool) -> Void) {
         
+        completion(success: true)
     }
     
     static func addLikeToPost(post: Post, completion: (success: Bool, post: Post?) -> Void) {
         
+        completion(success: true, post: mockPosts()[2])
     }
     
     static func deleteLike(like: Like, completion: (success: Bool, post: Post?) -> Void) {
-        
+        completion(success: true, post: mockPosts()[1])
     }
     
     static func orderPosts(posts: [Post]) -> [Post] {

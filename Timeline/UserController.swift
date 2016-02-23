@@ -19,14 +19,11 @@ class UserController {
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
         
         completion(user: mockUsers()[1])
-        return
-        
     }
     
     static func fetchAllUsers(completion: (users: [User]) -> Void) {
         
         completion(users: mockUsers())
-        return
     }
     
     static func followUser(user: User, completion: (success: Bool) -> Void) {
