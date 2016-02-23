@@ -23,6 +23,7 @@
 		AB8DAC7E1C7D15BB00CF3992 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC7D1C7D15BB00CF3992 /* User.swift */; };
 		AB8DAC801C7D17B200CF3992 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC7F1C7D17B200CF3992 /* Comment.swift */; };
 		AB8DAC821C7D18BE00CF3992 /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC811C7D18BE00CF3992 /* Like.swift */; };
+		AB8DAC841C7D19D000CF3992 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC831C7D19D000CF3992 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		AB8DAC7D1C7D15BB00CF3992 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB8DAC7F1C7D17B200CF3992 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		AB8DAC811C7D18BE00CF3992 /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
+		AB8DAC831C7D19D000CF3992 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				AB8DAC7D1C7D15BB00CF3992 /* User.swift */,
 				AB8DAC7F1C7D17B200CF3992 /* Comment.swift */,
 				AB8DAC811C7D18BE00CF3992 /* Like.swift */,
+				AB8DAC831C7D19D000CF3992 /* Post.swift */,
 				AB8DAC7B1C7D157300CF3992 /* LoginSignupViewController.swift */,
 				AB8DAC791C7D151800CF3992 /* LoginSignupChoiceViewController.swift */,
 				AB8DAC771C7D13B100CF3992 /* AddPhotoTableViewController.swift */,
@@ -286,6 +289,7 @@
 				AB8DAC7C1C7D157300CF3992 /* LoginSignupViewController.swift in Sources */,
 				AB8DAC7A1C7D151800CF3992 /* LoginSignupChoiceViewController.swift in Sources */,
 				AB8DAC781C7D13B100CF3992 /* AddPhotoTableViewController.swift in Sources */,
+				AB8DAC841C7D19D000CF3992 /* Post.swift in Sources */,
 				AB8DAC701C7D0EF100CF3992 /* TimelineTableViewController.swift in Sources */,
 				01E3FC251BE92C7600187536 /* AppDelegate.swift in Sources */,
 				AB8DAC801C7D17B200CF3992 /* Comment.swift in Sources */,
