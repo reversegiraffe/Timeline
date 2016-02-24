@@ -21,6 +21,7 @@ class LoginSignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViewBasedOnMode()
 
         // Do any additional setup after loading the view.
     }
@@ -28,6 +29,25 @@ class LoginSignupViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updateViewBasedOnMode() {
+        
+        switch mode {
+            
+        case .Signup: emailTextField.hidden = false;
+                      bioTextField.hidden = false;
+                      urlTextField.hidden = false;
+                      actionButton.titleLabel?.text = "Sign Up"
+            
+        case .Login: emailTextField.hidden = true;
+                     bioTextField.hidden = true;
+                     urlTextField.hidden = true
+                     actionButton.titleLabel?.text = "Log In"
+            
+        }
+        
+        
     }
 
     /*
