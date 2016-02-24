@@ -274,6 +274,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRb-Gr-yRb">
                                         <rect key="frame" x="0.0" y="276" width="560" height="55"/>
                                         <state key="normal" title="Action"/>
+                                        <connections>
+                                            <action selector="actionButtonTapped:" destination="cZ8-JF-1Ii" eventType="touchUpInside" id="nbL-NE-4a2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

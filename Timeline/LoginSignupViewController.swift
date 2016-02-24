@@ -9,6 +9,11 @@
 import UIKit
 
 class LoginSignupViewController: UIViewController {
+    
+    enum ViewMode {
+        case Login
+        case Signup
+    }
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -16,6 +21,18 @@ class LoginSignupViewController: UIViewController {
     @IBOutlet weak var bioTextField: UITextField!
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var actionButton: UIButton!
+    
+    var fieldsAreValid: Bool {
+        get {
+            switch mode {
+            case .Signup:
+                return !(usernameTextField.text == nil || emailTextField.text == nil || passwordTextField.text == nil)
+                
+            case .Login:
+                return !(emailTextField.text == nil || passwordTextField.text == nil)
+            }
+        }
+    }
     
     var mode: ViewMode = .Signup
     
@@ -35,12 +52,12 @@ class LoginSignupViewController: UIViewController {
         
         switch mode {
             
-        case .Signup: emailTextField.hidden = false;
+        case .Signup: usernameTextField.hidden = false;
                       bioTextField.hidden = false;
                       urlTextField.hidden = false;
                       actionButton.titleLabel?.text = "Sign Up"
             
-        case .Login: emailTextField.hidden = true;
+        case .Login: usernameTextField.hidden = true;
                      bioTextField.hidden = true;
                      urlTextField.hidden = true
                      actionButton.titleLabel?.text = "Log In"
@@ -49,6 +66,13 @@ class LoginSignupViewController: UIViewController {
         
         
     }
+    
+    
+    @IBAction func actionButtonTapped(sender: AnyObject) {
+        
+        
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -62,6 +86,4 @@ class LoginSignupViewController: UIViewController {
 
 }
 
-enum ViewMode {
-    case Login, Signup
-}
+
