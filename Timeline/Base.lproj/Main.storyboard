@@ -242,7 +242,52 @@
                     <view key="view" contentMode="scaleToFill" id="u5z-72-1xt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TfN-ub-gVq">
+                                <rect key="frame" x="20" y="44" width="560" height="331"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zxz-tT-rue">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMH-cg-anN">
+                                        <rect key="frame" x="0.0" y="55" width="560" height="56"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLc-IA-YfV">
+                                        <rect key="frame" x="0.0" y="111" width="560" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WAo-tP-Al7">
+                                        <rect key="frame" x="0.0" y="166" width="560" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jvw-cf-vtW">
+                                        <rect key="frame" x="0.0" y="221" width="560" height="56"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRb-Gr-yRb">
+                                        <rect key="frame" x="0.0" y="276" width="560" height="55"/>
+                                        <state key="normal" title="Action"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WAo-tP-Al7" firstAttribute="height" secondItem="JLc-IA-YfV" secondAttribute="height" id="381-7o-JR5"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uj2-QC-cjp" firstAttribute="top" secondItem="TfN-ub-gVq" secondAttribute="bottom" priority="750" constant="225" id="C7E-aZ-ZGa"/>
+                            <constraint firstAttribute="trailing" secondItem="TfN-ub-gVq" secondAttribute="trailing" constant="20" id="Tpo-Zu-UwT"/>
+                            <constraint firstItem="TfN-ub-gVq" firstAttribute="top" secondItem="u5z-72-1xt" secondAttribute="top" constant="44" id="fp1-ra-C5n"/>
+                            <constraint firstItem="TfN-ub-gVq" firstAttribute="leading" secondItem="u5z-72-1xt" secondAttribute="leading" constant="20" id="jjI-yP-nFc"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cL4-4m-BZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
