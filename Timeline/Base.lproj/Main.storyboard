@@ -289,6 +289,14 @@
                             <constraint firstItem="TfN-ub-gVq" firstAttribute="leading" secondItem="u5z-72-1xt" secondAttribute="leading" constant="20" id="jjI-yP-nFc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="actionButton" destination="kRb-Gr-yRb" id="uok-ea-Xsl"/>
+                        <outlet property="bioTextField" destination="WAo-tP-Al7" id="aAB-do-PeF"/>
+                        <outlet property="emailTextField" destination="pMH-cg-anN" id="Kcv-ab-cmj"/>
+                        <outlet property="passwordTextField" destination="JLc-IA-YfV" id="FeA-WX-tNd"/>
+                        <outlet property="urlTextField" destination="jvw-cf-vtW" id="Nwp-8N-OXO"/>
+                        <outlet property="usernameTextField" destination="Zxz-tT-rue" id="OoJ-Hr-0jr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cL4-4m-BZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
