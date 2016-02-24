@@ -55,12 +55,12 @@ class LoginSignupViewController: UIViewController {
         case .Signup: usernameTextField.hidden = false;
                       bioTextField.hidden = false;
                       urlTextField.hidden = false;
-                      actionButton.titleLabel?.text = "Sign Up"
+                      actionButton.setTitle("Sign Up", forState: .Normal)
             
         case .Login: usernameTextField.hidden = true;
                      bioTextField.hidden = true;
                      urlTextField.hidden = true
-                     actionButton.titleLabel?.text = "Log In"
+                     actionButton.setTitle("Log In", forState: .Normal)
             
         }
         
@@ -70,7 +70,37 @@ class LoginSignupViewController: UIViewController {
     
     @IBAction func actionButtonTapped(sender: AnyObject) {
         
+        if fieldsAreValid {
+            switch mode {
+                
+            case .Signup: UserController.createUser(emailTextField.text!, username: usernameTextField.text!, password: passwordTextField.text!, bio: bioTextField.text, url: urlTextField.text, completion: { (success, user) -> Void in
+                
+                if success, let _ = user {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    self.presentValidationAlertWithTitle("Sign up unsuccessful", message: "Please try again.")
+                }
+            })
+            case .Login: UserController.authenticateUser(emailTextField.text!, password: passwordTextField.text!, bio: bioTextField.text, url: urlTextField.text, completion: { (success, user) -> Void in
+                
+                if success, let _ = user {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    self.presentValidationAlertWithTitle("Log in unsuccessful", message: "Please try again.")
+                }
+            })
+                
+            }
+        }
+    }
+    
+    func presentValidationAlertWithTitle(title: String, message: String) {
         
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
     
 

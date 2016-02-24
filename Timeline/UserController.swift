@@ -47,15 +47,15 @@ class UserController {
         completion(success: true)
     }
     
-    static func authenticateUser(email: String, password: String, bio: String?, url: String?, completion: (success: Bool) -> Void) {
+    static func authenticateUser(email: String, password: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
         
-        completion(success: true)
+        completion(success: true, user: mockUsers()[1])
         
     }
     
-    static func createUser(email: String, username: String, password: String, bio: String?, url: String?, completion: (success: Bool) -> Void) {
+    static func createUser(email: String, username: String, password: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
         
-        completion(success: true)
+        completion(success: true, user: mockUsers()[0])
     }
     
     static func updateUser(user: User, username: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
