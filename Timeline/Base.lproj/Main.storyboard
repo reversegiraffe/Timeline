@@ -180,22 +180,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hp6-3l-s2r">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
-                                <state key="normal" title="Log In"/>
-                                <connections>
-                                    <segue destination="cZ8-JF-1Ii" kind="show" id="QBX-m2-al5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luj-h3-TOf">
-                                <rect key="frame" x="273" y="323" width="55" height="30"/>
-                                <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <segue destination="cZ8-JF-1Ii" kind="show" id="37M-l2-chK"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c8A-vl-TNa">
+                                <rect key="frame" x="20" y="44" width="560" height="156"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timeline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kue-W0-YPb">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="42"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timeline is a simple photo sharing service." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BX-jM-eZI">
+                                        <rect key="frame" x="0.0" y="42" width="560" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BdQ-wg-Nyu">
+                                        <rect key="frame" x="0.0" y="62.5" width="560" height="93.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVY-XC-Gp5">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="93.5"/>
+                                                <state key="normal" title="Log In"/>
+                                                <connections>
+                                                    <segue destination="cZ8-JF-1Ii" kind="show" id="Q8B-eW-CRG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k63-F8-zSt">
+                                                <rect key="frame" x="280" y="0.0" width="280" height="93.5"/>
+                                                <state key="normal" title="Sign Up"/>
+                                                <connections>
+                                                    <segue destination="cZ8-JF-1Ii" kind="show" id="44f-rH-oI1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="c8A-vl-TNa" secondAttribute="trailing" constant="20" id="Cl4-po-z69"/>
+                            <constraint firstItem="Ed9-Pc-mN5" firstAttribute="top" secondItem="c8A-vl-TNa" secondAttribute="bottom" priority="750" constant="400" id="h6p-7N-bKq"/>
+                            <constraint firstItem="c8A-vl-TNa" firstAttribute="top" secondItem="v9L-cG-mkF" secondAttribute="top" constant="44" id="hIo-cC-bfV"/>
+                            <constraint firstItem="c8A-vl-TNa" firstAttribute="leading" secondItem="v9L-cG-mkF" secondAttribute="leading" constant="20" id="rnh-45-ttT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="P8m-xa-ge6"/>
                 </viewController>
@@ -327,7 +355,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="VhN-2B-esM"/>
-        <segue reference="QBX-m2-al5"/>
+        <segue reference="Q8B-eW-CRG"/>
         <segue reference="3hT-NL-FrG"/>
     </inferredMetricsTieBreakers>
 </document>
