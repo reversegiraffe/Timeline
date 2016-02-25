@@ -27,7 +27,9 @@ class TimelineTableViewController: UITableViewController {
         if UserController.sharedController.currentUser == nil {
             tabBarController?.performSegueWithIdentifier("toSignupLoginPicker", sender: self)
         } else {
-            
+            PostController.fetchTimelineForUser(UserController.sharedController.currentUser, completion: { (posts) -> Void in
+                return posts
+            })
         }
     }
 

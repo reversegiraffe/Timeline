@@ -12,9 +12,7 @@ class UserController {
     
     static let sharedController = UserController()
     
-    let currentUser: User! = UserController.mockUsers()[0]
-    
-
+    let currentUser: User! = nil
     
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
         
