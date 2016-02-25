@@ -8,7 +8,9 @@
 
 import UIKit
 
-class UserSearchTableViewController: UITableViewController {
+class UserSearchTableViewController: UITableViewController, UISearchResultsUpdating {
+    
+    var searchController: UISearchController!
     
     @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
     var usersDataSource: [User] = []
@@ -44,6 +46,7 @@ class UserSearchTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpSearchController()
         updateViewBasedOnMode()
 
         // Uncomment the following line to preserve selection between presentations
@@ -94,6 +97,32 @@ class UserSearchTableViewController: UITableViewController {
         return cell
     }
     
+    func setUpSearchController() {
+        
+        let resultsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("UserSearchResultsTableView")
+        
+        searchController = UISearchController(searchResultsController: resultsViewController)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.sizeToFit()
+        searchController.hidesNavigationBarDuringPresentation = true
+        
+        tableView.tableHeaderView = searchController.searchBar
+        
+        definesPresentationContext = true
+
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        let searchTerm = searchController.searchBar.text ?? ""
+        let lowercaseSearchTerm = searchTerm.lowercaseString
+        
+        if let resultsController = searchController.searchResultsController as? UserSearchResultsTableViewController {
+            resultsController.usersResultsDataSource = usersDataSource.filter({$0.username.lowercaseString.containsString(lowercaseSearchTerm)})
+            
+            resultsController.tableView.reloadData()
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
