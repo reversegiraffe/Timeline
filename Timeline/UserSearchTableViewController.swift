@@ -40,11 +40,11 @@ class UserSearchTableViewController: UITableViewController {
             return ViewMode(rawValue: modeSegmentedControl.selectedSegmentIndex)!
         }
         
-        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViewBasedOnMode()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -67,9 +67,27 @@ class UserSearchTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return usersDataSource.count
+    }
+    
+    func updateViewBasedOnMode() {
+        
+        mode.users { (users) -> Void in
+            if let users = users {
+                self.usersDataSource = users
+            } else {
+                self.usersDataSource = []
+            }
+            
+            self.tableView.reloadData()
+        }
     }
 
+    @IBAction func selectedIndexChanged(sender: AnyObject) {
+        
+        updateViewBasedOnMode()
+        
+    }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
