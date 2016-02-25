@@ -10,7 +10,7 @@ import UIKit
 
 class TimelineTableViewController: UITableViewController {
     
-    var posts: [Post]
+    var posts: [Post] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

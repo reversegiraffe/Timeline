@@ -12,7 +12,7 @@ class UserController {
     
     static let sharedController = UserController()
     
-    let currentUser: User! = nil
+    let currentUser: User! = UserController.mockUsers()[3]
     
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
         
@@ -42,7 +42,7 @@ class UserController {
     
     static func followedByUser(user: User, completion: (users: [User]?) -> Void) {
         
-        completion(users: mockUsers())
+        completion(users: [mockUsers()[1], mockUsers()[3]])
     }
     
     static func authenticateUser(email: String, password: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {

@@ -52,14 +52,13 @@ class LoginSignupViewController: UIViewController {
         
         switch mode {
             
-        case .Signup: usernameTextField.hidden = false;
-                      bioTextField.hidden = false;
-                      urlTextField.hidden = false;
+        case .Signup:
                       actionButton.setTitle("Sign Up", forState: .Normal)
             
-        case .Login: usernameTextField.hidden = true;
-                     bioTextField.hidden = true;
+        case .Login: usernameTextField.hidden = true
+                     bioTextField.hidden = true
                      urlTextField.hidden = true
+        
                      actionButton.setTitle("Log In", forState: .Normal)
             
         }
