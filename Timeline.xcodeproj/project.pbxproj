@@ -27,6 +27,7 @@
 		AB8DAC861C7D1BA300CF3992 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC851C7D1BA300CF3992 /* UserController.swift */; };
 		AB8DAC891C7D233700CF3992 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC881C7D233700CF3992 /* PostController.swift */; };
 		AB8DAC8C1C7D29C800CF3992 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8DAC8B1C7D29C800CF3992 /* ImageController.swift */; };
+		ABDFFD6E1C7FB8C800ABBD5B /* UserSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDFFD6D1C7FB8C800ABBD5B /* UserSearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		AB8DAC851C7D1BA300CF3992 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		AB8DAC881C7D233700CF3992 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostController.swift; path = ../PostController.swift; sourceTree = "<group>"; };
 		AB8DAC8B1C7D29C800CF3992 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		ABDFFD6D1C7FB8C800ABBD5B /* UserSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		ABDFFD6C1C7FA8FD00ABBD5B /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				ABDFFD6D1C7FB8C800ABBD5B /* UserSearchResultsTableViewController.swift */,
 				AB8DAC7B1C7D157300CF3992 /* LoginSignupViewController.swift */,
 				AB8DAC791C7D151800CF3992 /* LoginSignupChoiceViewController.swift */,
 				AB8DAC771C7D13B100CF3992 /* AddPhotoTableViewController.swift */,
@@ -322,6 +325,7 @@
 				AB8DAC7C1C7D157300CF3992 /* LoginSignupViewController.swift in Sources */,
 				AB8DAC7A1C7D151800CF3992 /* LoginSignupChoiceViewController.swift in Sources */,
 				AB8DAC781C7D13B100CF3992 /* AddPhotoTableViewController.swift in Sources */,
+				ABDFFD6E1C7FB8C800ABBD5B /* UserSearchResultsTableViewController.swift in Sources */,
 				AB8DAC841C7D19D000CF3992 /* Post.swift in Sources */,
 				AB8DAC701C7D0EF100CF3992 /* TimelineTableViewController.swift in Sources */,
 				AB8DAC8C1C7D29C800CF3992 /* ImageController.swift in Sources */,
