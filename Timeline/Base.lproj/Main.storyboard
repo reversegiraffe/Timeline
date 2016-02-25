@@ -202,14 +202,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="93.5"/>
                                                 <state key="normal" title="Log In"/>
                                                 <connections>
-                                                    <segue destination="cZ8-JF-1Ii" kind="show" id="Q8B-eW-CRG"/>
+                                                    <segue destination="cZ8-JF-1Ii" kind="show" identifier="toLogin" id="Q8B-eW-CRG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k63-F8-zSt">
                                                 <rect key="frame" x="280" y="0.0" width="280" height="93.5"/>
                                                 <state key="normal" title="Sign Up"/>
                                                 <connections>
-                                                    <segue destination="cZ8-JF-1Ii" kind="show" id="44f-rH-oI1"/>
+                                                    <segue destination="cZ8-JF-1Ii" kind="show" identifier="toSignup" id="44f-rH-oI1"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -411,7 +411,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="VhN-2B-esM"/>
-        <segue reference="Q8B-eW-CRG"/>
+        <segue reference="44f-rH-oI1"/>
         <segue reference="3hT-NL-FrG"/>
     </inferredMetricsTieBreakers>
 </document>

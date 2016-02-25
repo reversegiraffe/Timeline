@@ -22,14 +22,25 @@ class LoginSignupChoiceViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "toSignup" {
+            
+            let destinationContoller = segue.destinationViewController as? LoginSignupViewController
+            destinationContoller?.mode = LoginSignupViewController.ViewMode.Signup
+
+        }
+        
+        if segue.identifier == "toLogin" {
+            
+            let destinationController = segue.destinationViewController as? LoginSignupViewController
+            destinationController?.mode = LoginSignupViewController.ViewMode.Login
+        }
     }
-    */
+    
 
 }
