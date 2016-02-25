@@ -124,6 +124,9 @@
                             </segments>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="modeSegmentedControl" destination="dzt-9L-57j" id="6kJ-sc-U4b"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZW-05-EZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

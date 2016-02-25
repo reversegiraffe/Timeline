@@ -9,6 +9,24 @@
 import UIKit
 
 class UserSearchTableViewController: UITableViewController {
+    
+    @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
+    var usersDataSource: [User] = []
+    
+    enum ViewMode: Int {
+        
+        case Friends = 0
+        case All = 1
+    }
+    
+    var mode: ViewMode {
+        
+        get {
+            return ViewMode(rawValue: modeSegmentedControl.selectedSegmentIndex)!
+        }
+        
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
