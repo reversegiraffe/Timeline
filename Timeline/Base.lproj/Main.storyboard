@@ -161,7 +161,7 @@
                         <segue destination="s77-qy-jkA" kind="relationship" relationship="viewControllers" id="0cG-1d-oYK"/>
                         <segue destination="awx-Sk-BVs" kind="relationship" relationship="viewControllers" id="Puc-Yt-7Sd"/>
                         <segue destination="cWW-af-pjU" kind="relationship" relationship="viewControllers" id="Udx-7O-Idd"/>
-                        <segue destination="bYT-pt-Pbr" kind="presentation" id="VhN-2B-esM"/>
+                        <segue destination="bYT-pt-Pbr" kind="presentation" identifier="toSignupLoginPicker" id="VhN-2B-esM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxU-78-HVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
