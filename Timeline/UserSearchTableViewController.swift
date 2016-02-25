@@ -17,6 +17,21 @@ class UserSearchTableViewController: UITableViewController {
         
         case Friends = 0
         case All = 1
+        
+        func users(completion: (users: [User]?) -> Void) {
+            
+            switch self {
+            
+            case .Friends: UserController.followedByUser(UserController.sharedController.currentUser, completion: { (users) -> Void in
+                completion(users: users)
+            })
+                
+            case .All: UserController.fetchAllUsers({ (users) -> Void in
+                completion(users: users)
+            })
+                
+            }
+        }
     }
     
     var mode: ViewMode {

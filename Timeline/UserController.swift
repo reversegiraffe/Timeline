@@ -40,9 +40,9 @@ class UserController {
         completion(success: true)
     }
     
-    static func followedByUser(user: User, completion: (success: Bool) -> Void) {
+    static func followedByUser(user: User, completion: (users: [User]?) -> Void) {
         
-        completion(success: true)
+        completion(users: mockUsers())
     }
     
     static func authenticateUser(email: String, password: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
