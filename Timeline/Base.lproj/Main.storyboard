@@ -169,7 +169,7 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileCollectionView" id="cnp-bB-Ny1">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileCollectionView" id="cnp-bB-Ny1" customClass="ProfileHeaderCollectionReusableView" customModule="Timeline" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="64" width="600" height="107"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -199,6 +199,11 @@
                                         <constraint firstItem="Lvn-2v-x0j" firstAttribute="leading" secondItem="cnp-bB-Ny1" secondAttribute="leading" constant="8" id="Z3C-1E-15c"/>
                                         <constraint firstItem="Lvn-2v-x0j" firstAttribute="top" secondItem="cnp-bB-Ny1" secondAttribute="top" id="eyS-vw-sGY"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="bioLabel" destination="fQO-lU-0ik" id="Uoe-Ph-WOv"/>
+                                        <outlet property="followButton" destination="AYE-Rn-QXJ" id="slE-iP-h6q"/>
+                                        <outlet property="homePageButton" destination="kuR-TN-D4t" id="ejf-Pf-S3f"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="Npa-Uu-7Ui" id="hCr-mT-zwG"/>
