@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol ProfileHeaderCollectionReusableViewDelegate {
+    
+    func userTappedFollowActionButton()
+    func userTappedURLButton()
+}
+
 class ProfileHeaderCollectionReusableView: UICollectionReusableView {
+    
+    var delegate: ProfileHeaderCollectionReusableViewDelegate?
     
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var bioLabel: UILabel!
@@ -28,6 +36,23 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
             homePageButton.hidden = true
         }
         
+        if user == UserController.sharedController.currentUser {
+            UserController.userFollowsUser(UserController.sharedController.currentUser, followsUser: user, completion: { (success) -> Void in
+                if success {
+                    self.followButton.setTitle("Unfollow", forState: .Normal)
+                } else {
+                    self.followButton.setTitle("Follow", forState: .Normal)
+                }
+            })
+        }
         
+    }
+    
+    @IBAction func followActionButtonTapped(sender: AnyObject) {
+        delegate?.userTappedFollowActionButton()
+    }
+
+    @IBAction func urlButtonTapped(sender: AnyObject) {
+        delegate?.userTappedURLButton()
     }
 }
