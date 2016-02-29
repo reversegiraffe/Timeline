@@ -95,6 +95,13 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
         
         guard let user = user else { return }
         
+        if user == UserController.sharedController.currentUser {
+            
+            UserController.logOutCurrentUser()
+            tabBarController?.selectedViewController = tabBarController?.viewControllers![0]
+            
+        } else {
+        
         UserController.userFollowsUser(UserController.sharedController.currentUser, followsUser: user) { (success) -> Void in
             
             if success {
@@ -108,7 +115,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
             }
         }
     }
-    
+    }
     
 
     
