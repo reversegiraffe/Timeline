@@ -13,7 +13,10 @@ class LoginSignupViewController: UIViewController {
     enum ViewMode {
         case Login
         case Signup
+        case Edit
     }
+    
+    var user: User?
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -30,7 +33,12 @@ class LoginSignupViewController: UIViewController {
                 
             case .Login:
                 return !(emailTextField.text == nil || passwordTextField.text == nil)
+                
+            case .Edit:
+                return !(usernameTextField.text == nil)
             }
+            
+            
         }
     }
     
@@ -61,6 +69,18 @@ class LoginSignupViewController: UIViewController {
         
                      actionButton.setTitle("Log In", forState: .Normal)
             
+        case .Edit: actionButton.setTitle("Update", forState: .Normal)
+            
+                    emailTextField.hidden = true
+                    passwordTextField.hidden = true
+            
+                    if let user = self.user {
+                        
+                        usernameTextField.text = user.username
+                        bioTextField.text = user.bio
+                        urlTextField.text = user.url
+                    }
+            
         }
         
         
@@ -88,9 +108,22 @@ class LoginSignupViewController: UIViewController {
                     self.presentValidationAlertWithTitle("Log in unsuccessful", message: "Please try again.")
                 }
             })
+            case .Edit: UserController.updateUser(user!, username: usernameTextField.text!, bio: bioTextField.text, url: urlTextField.text, completion: { (success, user) -> Void in
+                
+                if success {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    self.presentValidationAlertWithTitle("Unable to update user", message: "Please try again.")
+                }
+            })
                 
             }
         }
+    }
+    
+    func updateWithUser(user: User) {
+        self.user = user
+        mode = .Edit
     }
     
     func presentValidationAlertWithTitle(title: String, message: String) {
@@ -101,6 +134,7 @@ class LoginSignupViewController: UIViewController {
         
         presentViewController(alert, animated: true, completion: nil)
     }
+    
     
 
     /*
