@@ -8,9 +8,12 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UICollectionViewDataSource, ProfileHeaderCollectionReusableViewDelegate {
 
+    @IBOutlet weak var collectionView: UICollectionView!
     var user: User?
+    
+    var userPosts: [Post] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,49 @@ class ProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func updateBasedOnUser() {
+        
+        guard let user = user else { return }
+        
+        title = user.username
+        
+        PostController.postsForUser(user) { (posts) -> Void in
+            
+            self.userPosts = posts
+            self.collectionView.reloadData()
+    
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+       return userPosts.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageCell", forIndexPath: indexPath) as! ImageCollectionViewCell
+        
+        let post = userPosts[indexPath.item]
+        
+        cell.updateWithImageIdentifier(post.imageEndPoint)
+        
+        return cell
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        let headerCell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "profileHeaderView", forIndexPath: indexPath) as! ProfileHeaderCollectionReusableView
+        
+        headerCell.updateWithUser(user!)
+        headerCell.delegate = self
+        
+        return headerCell
+    }
+    
+    
     
 
     /*
