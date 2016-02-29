@@ -233,7 +233,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CV2-HT-wWh"/>
+                    <navigationItem key="navigationItem" id="CV2-HT-wWh">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="edit" id="eZB-9D-5Tx">
+                            <connections>
+                                <segue destination="cZ8-JF-1Ii" kind="presentation" identifier="toEditProfile" id="rEu-jJ-IKu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editBarButtonItem" destination="eZB-9D-5Tx" id="FFI-wM-eJd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biO-1m-hFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -527,8 +536,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="VhN-2B-esM"/>
-        <segue reference="Q8B-eW-CRG"/>
         <segue reference="eFK-Eu-l6x"/>
+        <segue reference="rEu-jJ-IKu"/>
         <segue reference="Z5g-DY-i7a"/>
         <segue reference="3hT-NL-FrG"/>
     </inferredMetricsTieBreakers>

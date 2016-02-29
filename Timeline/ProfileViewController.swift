@@ -11,6 +11,7 @@ import SafariServices
 
 class ProfileViewController: UIViewController, UICollectionViewDataSource, ProfileHeaderCollectionReusableViewDelegate {
 
+    @IBOutlet weak var editBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     var user: User?
     
@@ -21,10 +22,17 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
         
         if user == nil {
             user = UserController.sharedController.currentUser
+            editBarButtonItem.enabled = true
         }
+        
+        
        
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,16 +111,59 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
     
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "toEditProfile" {
+            
+            if let destinationViewController = segue.destinationViewController as? LoginSignupViewController {
+                destinationViewController.updateWithUser(user!)
+            }
+            
+            
+        }
+        
+        
     }
-    */
+
     
     
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
