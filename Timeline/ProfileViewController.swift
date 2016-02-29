@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ProfileViewController: UIViewController, UICollectionViewDataSource, ProfileHeaderCollectionReusableViewDelegate {
 
@@ -17,6 +18,10 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if user == nil {
+            user = UserController.sharedController.currentUser
+        }
        
 
         // Do any additional setup after loading the view.
@@ -68,6 +73,33 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
         return headerCell
     }
     
+    func userTappedURLButton() {
+        
+        if let userURL = NSURL(string: (user?.url)!) {
+            
+            let safariViewController = SFSafariViewController(URL: userURL)
+            presentViewController(safariViewController, animated: true, completion: nil)
+        }
+        
+    }
+    
+    func userTappedFollowActionButton() {
+        
+        guard let user = user else { return }
+        
+        UserController.userFollowsUser(UserController.sharedController.currentUser, followsUser: user) { (success) -> Void in
+            
+            if success {
+                UserController.unfollowUser(self.user!, completion: { (success) -> Void in
+                    self.updateBasedOnUser()
+                })
+            } else {
+                UserController.followUser(self.user!, completion: { (success) -> Void in
+                    self.updateBasedOnUser()
+                })
+            }
+        }
+    }
     
     
 

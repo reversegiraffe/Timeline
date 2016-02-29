@@ -178,6 +178,9 @@
                                             <constraint firstAttribute="bottom" secondItem="sJ7-4S-OVf" secondAttribute="bottom" id="fOQ-bs-bxC"/>
                                             <constraint firstItem="sJ7-4S-OVf" firstAttribute="leading" secondItem="pM2-9M-eKI" secondAttribute="leading" id="pMk-wi-n5t"/>
                                         </constraints>
+                                        <connections>
+                                            <segue destination="Cyk-8F-ZWV" kind="show" identifier="toPostDetailView" id="Z5g-DY-i7a"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileHeaderView" id="cnp-bB-Ny1" customClass="ProfileHeaderCollectionReusableView" customModule="Timeline" customModuleProvider="target">
@@ -523,9 +526,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3hT-NL-FrG"/>
         <segue reference="VhN-2B-esM"/>
-        <segue reference="eFK-Eu-l6x"/>
         <segue reference="Q8B-eW-CRG"/>
+        <segue reference="eFK-Eu-l6x"/>
+        <segue reference="Z5g-DY-i7a"/>
+        <segue reference="3hT-NL-FrG"/>
     </inferredMetricsTieBreakers>
 </document>
