@@ -8,10 +8,29 @@
 
 import Foundation
 
-struct Like {
+struct Like: FirebaseType {
+    
+    private let kPostKey = "post"
+    private let kUsernameKey = "username"
+    
     let username: String
     let postIdentifier: String
     var identifier: String?
+    var endpoint: String {
+        return "/posts/\(self.postIdentifier)/likes"
+    }
+    var jsonValue: [String: AnyObject] {
+        return [kPostKey: postIdentifier, kUsernameKey: username]
+    }
+    
+    init?(json: [String : AnyObject], identifier: String) {
+        guard let postIdentifier = json[kPostKey] as? String,
+            let username = json[kUsernameKey] as? String else { return nil }
+        
+        self.postIdentifier = postIdentifier
+        self.username = username
+        self.identifier = identifier
+    }
     
     init(username: String, postIdentifier: String, identifier: String? = nil) {
         
@@ -19,6 +38,7 @@ struct Like {
         self.postIdentifier = postIdentifier
         self.identifier = identifier
     }
+    
 }
 
 func ==(lhs: Like, rhs: Like) -> Bool {
