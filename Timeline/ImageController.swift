@@ -27,7 +27,15 @@ class ImageController {
     
     static func imageForIdentifier(identifier: String, completion: (image: UIImage?) -> Void) {
         
-        completion(image: UIImage(named: "MockPhoto"))
+        FirebaseController.dataAtEndpoint("images/\(identifier)") { (data) -> Void in
+            
+            if let data = data as? String {
+                let image = UIImage(base64: data)
+                completion(image: image)
+            } else {
+                completion(image: nil)
+            }
+        }
     }
 }
 
