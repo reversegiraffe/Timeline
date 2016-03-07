@@ -12,7 +12,6 @@ class UserController {
     
     private let kUserKey = "user"
     
-    
     var currentUser: User! {
         
         get {
@@ -41,12 +40,11 @@ class UserController {
     
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
         
-        FirebaseController.dataAtEndpoint("user/\(identifier)") { (data) -> Void in
+        FirebaseController.dataAtEndpoint("users/\(identifier)") { (data) -> Void in
             
-            if let json = data as? [String: AnyObject] {
-                let user = User(json: json, identifier: identifier)
-                
-                completion(user: user)
+            if let json = data as? [String: AnyObject],
+                let user = User(json: json, identifier: identifier) {
+                    completion(user: user)
             } else {
                 completion(user: nil)
             }
@@ -77,7 +75,7 @@ class UserController {
     
     static func unfollowUser(user: User, completion: (success: Bool) -> Void) {
         
-        FirebaseController.base.childByAppendingPath("users/\(sharedController.currentUser.identifier!)/follows/\(user.identifier!)").removeValue()
+        FirebaseController.base.childByAppendingPath("/users/\(sharedController.currentUser.identifier!)/follows/\(user.identifier!)").removeValue()
         
         completion(success: true)
     }
@@ -131,9 +129,12 @@ class UserController {
                     
                     if let user = user {
                         sharedController.currentUser = user
+                        completion(success: true, user: user)
+                    } else {
+                        completion(success: false, user: nil)
                     }
                     
-                    completion(success: true, user: user)
+                    
                 })
             }
         }
@@ -141,19 +142,28 @@ class UserController {
     
     static func createUser(email: String, username: String, password: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
         
-        FirebaseController.base.createUser(email, password: password) { (success, response) -> Void in
+        FirebaseController.base.createUser(email, password: password) { (error, response) -> Void in
             
-            if let uid = response["uid"] as? String {
+            if error != nil {
                 
-                var user = User(username: username, uid: uid, bio: bio, url: url)
-                user.save()
+                print("Error creating user: \(error)")
                 
-                authenticateUser(email, password: password, completion: { (success, user) -> Void in
-                    completion(success: success, user: user)
-                })
             } else {
-                completion(success: false, user: nil)
+                
+                if let uid = response["uid"] as? String {
+                    
+                    var user = User(username: username, uid: uid, bio: bio, url: url)
+                    user.save()
+                    
+                    authenticateUser(email, password: password, completion: { (success, user) -> Void in
+                        completion(success: success, user: user)
+                    })
+                } else {
+                    completion(success: false, user: nil)
+                }
             }
+            
+           
         }
     }
     

@@ -14,7 +14,7 @@ struct User: Equatable, FirebaseType {
     private let kBioKey = "bio"
     private let kURLKey = "url"
     
-    var username = ""
+    var username: String
     var bio: String?
     var url: String?
     var identifier: String?
@@ -37,8 +37,16 @@ struct User: Equatable, FirebaseType {
         return json
     }
     
+    init(username: String, uid: String, bio: String? = nil, url: String? = nil) {
+        
+        self.username = username
+        self.bio = bio
+        self.url = url
+        self.identifier = uid
+    }
+    
     init?(json: [String : AnyObject], identifier: String) {
-        guard let username = jsonValue[kURLKey] as? String else { return nil }
+        guard let username = json[kUsernameKey] as? String else { return nil }
         
         self.username = username
         self.bio = jsonValue[kBioKey] as? String
@@ -47,13 +55,6 @@ struct User: Equatable, FirebaseType {
         
     }
     
-    init(username: String, uid: String, bio: String? = nil, url: String? = nil) {
-        
-        self.username = username
-        self.bio = bio
-        self.url = url
-        self.identifier = uid
-    }
 }
 
 func ==(lhs: User, rhs: User) -> Bool {
