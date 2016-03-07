@@ -176,7 +176,8 @@ class UserController {
     }
     
     static func logoutCurrentUser() {
-       UserController.sharedController.currentUser = nil
+        FirebaseController.base.unauth()
+        UserController.sharedController.currentUser = nil
     }
     
     static func mockUsers() -> [User] {
