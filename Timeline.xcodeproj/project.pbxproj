@@ -109,7 +109,7 @@
 		AB0F74C01C8A55B400E2FCF0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AB0F74C21C8A55C300E2FCF0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AB0F74C41C8A55D400E2FCF0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		AB0F74C61C8A566D00E2FCF0 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		AB0F74C61C8A566D00E2FCF0 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseController.swift; path = ../FirebaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +157,7 @@
 		012A8F051BE975AD00283BF2 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AB0F74C61C8A566D00E2FCF0 /* FirebaseController.swift */,
 				014C1BD31BE96083001A52DC /* UserController.swift */,
 				014C1BD51BE969B0001A52DC /* PostController.swift */,
 				014C1BD71BE972CC001A52DC /* ImageController.swift */,
@@ -192,7 +193,6 @@
 		01E3FC181BE92C7600187536 = {
 			isa = PBXGroup;
 			children = (
-				AB0F74C61C8A566D00E2FCF0 /* FirebaseController.swift */,
 				AB0F74C41C8A55D400E2FCF0 /* SystemConfiguration.framework */,
 				AB0F74C21C8A55C300E2FCF0 /* Security.framework */,
 				AB0F74C01C8A55B400E2FCF0 /* CFNetwork.framework */,
