@@ -120,7 +120,23 @@ class UserController {
     
     static func authenticateUser(email: String, password: String, completion: (success: Bool, user: User?) -> Void) {
         
-        completion(success: true, user: mockUsers().first)
+        FirebaseController.base.authUser(email, password: password) { (error, response) -> Void in
+            
+            if error != nil {
+                print("Unsuccessful log in attempt")
+                completion(success: false, user: nil)
+            } else {
+                print("User ID: \(response.uid) authenticated successfully")
+                UserController.userForIdentifier(response.uid, completion: { (user) -> Void in
+                    
+                    if let user = user {
+                        sharedController.currentUser = user
+                    }
+                    
+                    completion(success: true, user: user)
+                })
+            }
+        }
     }
     
     static func createUser(email: String, username: String, password: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
