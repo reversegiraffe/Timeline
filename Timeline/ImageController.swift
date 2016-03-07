@@ -13,7 +13,16 @@ class ImageController {
     
     static func uploadImage(image: UIImage, completion: (identifier: String?) -> Void) {
         
-        completion(identifier: "-K1l4125TYvKMc7rcp5e")
+        if let base64Image = image.base64String {
+            
+            let base = FirebaseController.base.childByAppendingPath("images")
+            base.setValue(base64Image)
+            
+            completion(identifier: base.key)
+        } else {
+            completion(identifier: nil)
+        }
+        
     }
     
     static func imageForIdentifier(identifier: String, completion: (image: UIImage?) -> Void) {
