@@ -21,3 +21,24 @@ class ImageController {
         completion(image: UIImage(named: "MockPhoto"))
     }
 }
+
+extension UIImage {
+    
+    var base64String: String? {
+        
+        guard let data = UIImageJPEGRepresentation(self, 0.8) else { return nil }
+        
+        return data.base64EncodedStringWithOptions(.EncodingEndLineWithCarriageReturn)
+    }
+    
+    convenience init?(base64: String) {
+        
+        if let data = NSData(base64EncodedString: base64, options: .IgnoreUnknownCharacters) {
+            self.init(data: data)
+        } else {
+            return nil
+        }
+    }
+    
+    
+}
