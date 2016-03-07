@@ -39,16 +39,16 @@ class UserController {
     
     static let sharedController = UserController()
     
-    static func userForIdentifier(identifier: String, completion: (users: [User]) -> Void) {
+    static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
         
         FirebaseController.dataAtEndpoint("user/\(identifier)") { (data) -> Void in
             
             if let json = data as? [String: AnyObject] {
-                let users = json.flatMap({User(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+                let user = User(json: json, identifier: identifier)
                 
-                completion(users: users)
+                completion(user: user)
             } else {
-                completion(users: [])
+                completion(user: nil)
             }
         }
     }
@@ -95,7 +95,27 @@ class UserController {
     
     static func followedByUser(user: User, completion: (followed: [User]?) -> Void) {
         
-        completion(followed: [mockUsers()[1], mockUsers()[0]])
+        FirebaseController.dataAtEndpoint("/users/\(user.identifier)!/follows/") { (data) -> Void in
+            
+            if let json = data as? [String: AnyObject] {
+                
+                var users: [User] = []
+                
+                for userJson in json {
+                    
+                    userForIdentifier(userJson.0, completion: { (user) -> Void in
+                        
+                        if let user = user {
+                            users.append(user)
+                            completion(followed: users)
+                        }
+                    })
+                }
+
+            } else {
+                completion(followed: [])
+            }
+        }
     }
     
     static func authenticateUser(email: String, password: String, completion: (success: Bool, user: User?) -> Void) {
