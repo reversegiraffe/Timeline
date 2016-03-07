@@ -10,7 +10,32 @@ import Foundation
 
 class UserController {
     
-    var currentUser: User! = UserController.mockUsers().first //nil  /*For Testing*/
+    private let kUserKey = "user"
+    
+    
+    var currentUser: User! {
+        
+        get {
+            
+            guard let uid = FirebaseController.base.authData?.uid,
+                let userDictionary = NSUserDefaults.standardUserDefaults().valueForKey(kUserKey) as? [String: AnyObject] else {
+                    return nil
+            }
+            
+            return User(json: userDictionary, identifier: uid)
+        }
+        
+        set {
+            
+            if let newValue = newValue {
+                NSUserDefaults.standardUserDefaults().setValue(newValue.jsonValue, forKey: kUserKey)
+                NSUserDefaults.standardUserDefaults().synchronize()
+            } else {
+                NSUserDefaults.standardUserDefaults().removeObjectForKey(kUserKey)
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }
+        }
+    }
     
     static let sharedController = UserController()
     
