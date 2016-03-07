@@ -77,6 +77,8 @@ class UserController {
     
     static func unfollowUser(user: User, completion: (success: Bool) -> Void) {
         
+        FirebaseController.base.childByAppendingPath("users/\(sharedController.currentUser.identifier!)/follows/\(user.identifier!)").removeValue()
+        
         completion(success: true)
     }
     
