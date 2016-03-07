@@ -39,9 +39,18 @@ class UserController {
     
     static let sharedController = UserController()
     
-    static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
+    static func userForIdentifier(identifier: String, completion: (users: [User]) -> Void) {
         
-        completion(user: mockUsers().first)
+        FirebaseController.dataAtEndpoint("user/\(identifier)") { (data) -> Void in
+            
+            if let json = data as? [String: AnyObject] {
+                let users = json.flatMap({User(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+                
+                completion(users: users)
+            } else {
+                completion(users: [])
+            }
+        }
     }
     
     static func fetchAllUsers(completion: (users: [User]) -> Void) {
