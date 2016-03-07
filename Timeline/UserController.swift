@@ -84,7 +84,13 @@ class UserController {
     
     static func userFollowsUser(user: User, followsUser: User, completion: (follows: Bool) -> Void ) {
        
-        completion(follows: true)
+        FirebaseController.dataAtEndpoint("/users/\(user.identifier!)/follows/\(followsUser.identifier!)") { (data) -> Void in
+            if let _ = data {
+                completion(follows: true)
+            } else {
+                completion(follows: false)
+            }
+        }
     }
     
     static func followedByUser(user: User, completion: (followed: [User]?) -> Void) {
