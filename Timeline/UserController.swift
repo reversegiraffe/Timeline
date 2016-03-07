@@ -55,7 +55,17 @@ class UserController {
     
     static func fetchAllUsers(completion: (users: [User]) -> Void) {
         
-        completion(users: mockUsers())
+        FirebaseController.dataAtEndpoint("users") { (data) -> Void in
+            
+            if let json = data as? [String: AnyObject] {
+                
+                let users = json.flatMap({User(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+                
+                completion(users: users)
+            } else {
+                completion(users: [])
+            }
+        }
     }
     
     static func followUser(user: User, completion: (success: Bool) -> Void) {
